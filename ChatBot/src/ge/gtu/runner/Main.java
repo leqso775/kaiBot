@@ -1,6 +1,6 @@
-package Runner;
+package ge.gtu.runner;
 
-import Enum.EmotionEnum;
+import ge.gtu.enums.EmotionEnum;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
