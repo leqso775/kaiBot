@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ge.gtu.model;
+package ge.gtu.theme;
 
 /**
  *
- * @author Archil
+ * @author Nana_Lomidze
  */
-public class Scale {
-    
-
+public class ThemeSport {
     
 }

@@ -7,64 +7,48 @@ package ge.gtu.model;
 
 import ge.gtu.enums.EmotionEnum;
 import ge.gtu.enums.GenderEnum;
-import ge.gtu.enums.RelationEnum;
 import java.util.Date;
 
 /**
  *
  * @author Archil
  */
-public class User extends Bot{
+public class Bot {
     
-    //Сделать бота вообще нехависимым и сделать так чтобы вы узнали друг друга по мере общения
-    //Если нет Юзера родных, научить бота их распознавать и сказать ему об их
-    private int id;
     private String firstname;
     private String surname;
     private GenderEnum gender;
+    private int age;
     private Date birthday;
     private String nickname;
     private String specialnickname;
     private String lovelyname;
     private String lovelynickname;
-    private String password;
     private String email;
     private EmotionEnum emotion;
 
-    public User() {
+    public Bot() {
     }
 
-    public User(int id, String firstname, String surname, GenderEnum gender, Date birthday, String nickname, String specialnickname, String lovelyname, String lovelynickname, String password, String email, EmotionEnum emotion) {
-        this.id = id;
+    public Bot(String firstname, String surname, GenderEnum gender, int age, Date birthday, String nickname, String specialnickname, String lovelyname, String lovelynickname, String email, EmotionEnum emotion) {
         this.firstname = firstname;
         this.surname = surname;
         this.gender = gender;
+        this.age = age;
         this.birthday = birthday;
         this.nickname = nickname;
         this.specialnickname = specialnickname;
         this.lovelyname = lovelyname;
         this.lovelynickname = lovelynickname;
-        this.password = password;
         this.email = email;
         this.emotion = emotion;
     }
 
-    public User(String firstname, String surname, GenderEnum gender, Date birthday, String nickname, String password, String email) {
+    public Bot(String firstname, String surname, GenderEnum gender, int age) {
         this.firstname = firstname;
         this.surname = surname;
         this.gender = gender;
-        this.birthday = birthday;
-        this.nickname = nickname;
-        this.password = password;
-        this.email = email;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.age = age;
     }
 
     public String getFirstname() {
@@ -89,6 +73,14 @@ public class User extends Bot{
 
     public void setGender(GenderEnum gender) {
         this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public Date getBirthday() {
@@ -131,14 +123,6 @@ public class User extends Bot{
         this.lovelynickname = lovelynickname;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -154,8 +138,9 @@ public class User extends Bot{
     public void setEmotion(EmotionEnum emotion) {
         this.emotion = emotion;
     }
-    
-    
 
+    
+    
+    
     
 }
