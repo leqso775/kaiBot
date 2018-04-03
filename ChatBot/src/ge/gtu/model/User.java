@@ -6,9 +6,9 @@
 package ge.gtu.model;
 
 import ge.gtu.enums.EmotionEnum;
+import java.sql.Date;
 import ge.gtu.enums.GenderEnum;
 import ge.gtu.enums.RelationEnum;
-import java.util.Date;
 
 /**
  *
