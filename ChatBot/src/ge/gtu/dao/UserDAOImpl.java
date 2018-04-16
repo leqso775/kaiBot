@@ -9,7 +9,9 @@ import ge.gtu.enums.GenderEnum;
 import ge.gtu.model.Bot;
 import ge.gtu.model.User;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -41,12 +43,33 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void AddBot(Bot bot) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //Bot bot = new Bot();
     }
 
     @Override
     public User GetUser(int id, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+            String sql = "SELECT * FROM system_user WERE id = ? AND password = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            pstmt.setString(2, password);
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                String firstname = rs.getString("firstname");
+                String surname = rs.getString("surname");
+                String gender = rs.getString("gender");
+                Date birthday = rs.getDate("date");
+                String nickname = rs.getString("nickname");
+                String email = rs.getString("email");
+                User user = new User(firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
+                return user;
+            }else {
+                return null;
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+        return null;
     }
 
     @Override
