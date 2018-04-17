@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ge.gtu.runner;
+package ge.gtu.panel;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -14,10 +14,10 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Nana_Lomidze
  */
-public class BotRegistrationFormPane extends AnchorPane {
+public class UserRegistrationFormPane extends AnchorPane {
     
-    public BotRegistrationFormPane() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("BotRegistrationFormPane.fxml"));
+    public UserRegistrationFormPane() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserRegistrationFormPane.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         

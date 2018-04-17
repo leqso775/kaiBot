@@ -74,7 +74,7 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public String doPasswordRec(int id, String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
     
     

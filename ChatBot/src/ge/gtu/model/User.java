@@ -58,7 +58,7 @@ public class User extends Bot{
         this.password = password;
         this.email = email;
     }
-
+    
     public int getId() {
         return id;
     }

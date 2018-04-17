@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ge.gtu.runner;
+package ge.gtu.panel;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -16,20 +16,18 @@ import javafx.stage.Stage;
  *
  * @author Nana_Lomidze
  */
-public class BotRegistrationForm extends Application {
+public class LogInForm extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        BotRegistrationFormPane root = new BotRegistrationFormPane();
-        TextField firstnameTextField = new TextField();
-        TextField surnameTextField = new TextField();
-        MenuButton genderMenuButton = new MenuButton();
-        MenuButton ageMenuButton = new MenuButton();
-        Button button = new Button();
+        
+        TextField emailTextField = new TextField();
+        TextField passwordTextField = new TextField();
+        Label forgotpasswordLabel = new Label();
+        Button loginButton = new Button();
         
         
-        
-        
+        LogInFormPane root = new LogInFormPane();
         
         Scene scene = new Scene(root);
         
