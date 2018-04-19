@@ -49,11 +49,16 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public User GetUser(int id, String password) {
         try{
+<<<<<<< HEAD
             String sql = "SELECT * FROM system_user WERE id = ? AND password = ?";
+=======
+            String sql = "SELECT * FROM system_user WHERE id = ? AND password = ?";
+>>>>>>> ef120a65414182e012ae2c7371df455df589e635
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
             pstmt.setString(2, password);
             ResultSet rs = pstmt.executeQuery();
+<<<<<<< HEAD
             if(rs.next()){
                 String firstname = rs.getString("firstname");
                 String surname = rs.getString("surname");
@@ -64,12 +69,28 @@ public class UserDAOImpl implements UserDAO{
                 User user = new User(firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
                 return user;
             }else {
+=======
+            if (rs.next()) {
+                String firstname = rs.getString("firstname");
+                String surname = rs.getString("surname");
+                //gender ასე არ იმუშავებს!
+                String gender = rs.getString("gender");
+                Date birthday = rs.getDate("birthday");
+                String nickname = rs.getString("nickname");
+                String email = rs.getString("email");
+                User user = new User(firstname, surname, gender, birthday, nickname, password, email);
+                return user;
+            } else {
+>>>>>>> ef120a65414182e012ae2c7371df455df589e635
                 return null;
             }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }
+<<<<<<< HEAD
         return null;
+=======
+>>>>>>> ef120a65414182e012ae2c7371df455df589e635
     }
 
     @Override
