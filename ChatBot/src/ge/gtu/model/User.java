@@ -5,10 +5,10 @@
  */
 package ge.gtu.model;
 
-import ge.gtu.enums.EmotionEnum;
+import ge.gtu.model.enums.EmotionEnum;
 import java.sql.Date;
-import ge.gtu.enums.GenderEnum;
-import ge.gtu.enums.RelationEnum;
+import ge.gtu.model.enums.GenderEnum;
+import ge.gtu.model.enums.RelationEnum;
 
 /**
  *

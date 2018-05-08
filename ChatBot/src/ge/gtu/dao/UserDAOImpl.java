@@ -5,7 +5,7 @@
  */
 package ge.gtu.dao;
 
-import ge.gtu.enums.GenderEnum;
+import ge.gtu.model.enums.GenderEnum;
 import ge.gtu.model.Bot;
 import ge.gtu.model.User;
 import java.sql.Connection;
