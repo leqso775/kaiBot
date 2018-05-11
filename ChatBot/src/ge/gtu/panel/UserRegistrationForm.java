@@ -5,7 +5,6 @@
  */
 package ge.gtu.panel;
 
-import com.sun.javafx.scene.control.skin.ComboBoxPopupControl;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javafx.application.Application;
@@ -103,20 +102,49 @@ public class UserRegistrationForm extends Application {
             errorNickname.setText("Fill Field");
         }
         
+        //necessary password.length()>8&&<20, has A-z&&0-9
         TextField passwordTextField = new TextField();
         Label errorPassword = new Label();
         if(passwordTextField.getText().length()==0){
             errorPassword.setText("Fill Field");
+        }else if(passwordTextField.getText().length()<8){
+            errorPassword.setText("Weak Password");
+        }else if(passwordTextField.getText().length()>20){
+            errorPassword.setText("Too Large Password");
+        } int x=0;
+        for (int i=0; i<passwordTextField.getText().length(); i++){
+            if (passwordTextField.getText().charAt(i) >= 'a' && passwordTextField.getText().charAt(i) <= 'z'){
+                x++;
+                break;
+            }
+        }
+        for (int i=0; i<passwordTextField.getText().length(); i++){
+            if (passwordTextField.getText().charAt(i) >= 'A' && passwordTextField.getText().charAt(i) <= 'Z'){
+                x++;
+                break;
+            }
+        }
+        for (int i=0; i<passwordTextField.getText().length(); i++){
+            if (passwordTextField.getText().charAt(i) >= '0' && passwordTextField.getText().charAt(i) <= '9'){
+                x++;
+                break;
+            }
+        }
+        if (x!=3){
+            errorPassword.setText("Unnecessary Password");
         }
         
-        TextField emailTextField = new TextField();
+        TextField emailTextField = new TextField("Insert Real EMail, PLS");
         Label errorEmail = new Label();
         if(emailTextField.getText().length()==0){
             errorEmail.setText("Fill Field");
+        }for(int i=0; i<emailTextField.getText().length(); i++){
+            if(emailTextField.getText().charAt(i)!='@'){
+                    errorEmail.setText("Insert Really Existing EMAIL To Be In Touch With Me");
+            }
         }
         
         UserRegistrationFormPane root = new UserRegistrationFormPane();
-        
         Scene scene = new Scene(root);
         
         stage.setScene(scene);

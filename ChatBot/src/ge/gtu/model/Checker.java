@@ -18,7 +18,9 @@ import java.time.format.DateTimeFormatter;
 import javafx.scene.control.TextField;
 
 /**
- *
+ *BULSHIT! WE DO NOT NEED THIS! DID THIS EVERYTHING IN USERREGISTRATIONFORM!
+ * LEFT JUST TO LET YOU KNOW THAT IN OUR CODE YOUR STYLE DOES NOT WORK!
+ * WE HAVE DAO HERE, NOT DIFFERED JAVA CLASSES...
  * @author Nana_Lomidze
  */
 public abstract class Checker {

@@ -16,11 +16,12 @@ public interface UserDAO {
     
     void addUser (User user);
     
+    void editUser (User user);
+    
     void AddBot (Bot bot);
     
     User GetUser (int id, String password);
     
     String doPasswordRec(int id, String email);
-    
     
 }
