@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -20,7 +20,7 @@ public class BotRegistrationForm extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        BotRegistrationFormPane root = new BotRegistrationFormPane();
+        BotRegistrationFXMLController root = new BotRegistrationFXMLController();
         TextField firstnameTextField = new TextField();
         TextField surnameTextField = new TextField();
         MenuButton genderMenuButton = new MenuButton();

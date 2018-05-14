@@ -6,18 +6,20 @@
 package ge.gtu.panel;
 
 import java.io.IOException;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  *
  * @author Nana_Lomidze
  */
-public class LogInFormPane extends AnchorPane {
+public class LogInFormPane extends Application {
     
     public LogInFormPane() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LogInFormPane.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("LogInFXML.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         
@@ -30,5 +32,10 @@ public class LogInFormPane extends AnchorPane {
     
     @FXML
     private void initialize() {
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
