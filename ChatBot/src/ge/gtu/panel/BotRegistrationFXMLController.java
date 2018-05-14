@@ -24,6 +24,7 @@ public class BotRegistrationFXMLController implements Initializable {
         MenuButton genderMenuButton = new MenuButton();
         MenuButton ageMenuButton = new MenuButton();
         Button button = new Button();
+       
         
         
     @Override

@@ -17,7 +17,7 @@ import javafx.scene.layout.AnchorPane;
 public class UserRegistrationFormPane extends AnchorPane {
     
     public UserRegistrationFormPane() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserRegistrationFormPane.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UserRegFXML.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         
