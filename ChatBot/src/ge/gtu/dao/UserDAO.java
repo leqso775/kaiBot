@@ -18,7 +18,9 @@ public interface UserDAO {
     
     void AddBot (Bot bot);
     
-    User GetUser (int id, String password);
+    User GetUser1 (int id, String password);
+    
+    User GetUser2 (String email, String password);
     
     String doPasswordRec(int id, String email);
     

@@ -7,6 +7,7 @@ package ge.gtu.panel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,18 +25,28 @@ public class LogInFXMLController implements Initializable {
      // ფუნქციები იწერება initialize-ში
      @FXML
      
-        TextField Id = new TextField();
-        PasswordField password = new PasswordField();
-       ///     TextField passwordTextField = new TextField();
-        Label forgotpasswordLabel = new Label();
-        Button loginButton = new Button();
-         Button registration = new Button();
+     private   TextField IdorMail;
+     private   PasswordField password;
+     private   Label forgotpasswordLabel ;
+     private   Button loginButton;
+     private    Button registration;
+    
     
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
+       for(int i=0; i<IdorMail.getLength(); i++){
+           if(IdorMail.getText().contains("@")){
+               //LOGIN2 FUNC
+           }else{
+               //LOGIN1 FUNC
+           }
+       }
+        
+        
+        
     }    
     
 }

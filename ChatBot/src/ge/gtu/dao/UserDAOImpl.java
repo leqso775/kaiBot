@@ -47,7 +47,7 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public User GetUser(int id, String password) {
+    public User GetUser1(int id, String password) {
         try{
             String sql = "SELECT * FROM system_user WHERE id = ? AND password = ?";
             pstmt = conn.prepareStatement(sql);
@@ -61,7 +61,7 @@ public class UserDAOImpl implements UserDAO{
                 Date birthday = rs.getDate("birthday");
                 String nickname = rs.getString("nickname");
                 String email = rs.getString("email");
-                User user = new User(firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
+                User user = new User(id, firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
                 return user;
             }else {
                 return null;
@@ -74,6 +74,32 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public String doPasswordRec(int id, String email) {
+        return null;
+    }
+
+    @Override
+    public User GetUser2(String email, String password) {
+        try{
+            String sql = "SELECT * FROM system_user WHERE id = ? AND password = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, email);
+            pstmt.setString(2, password);
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                Integer id = rs.getInt("id");
+                String firstname = rs.getString("firstname");
+                String surname = rs.getString("surname");
+                String gender = rs.getString("gender");
+                Date birthday = rs.getDate("birthday");
+                String nickname = rs.getString("nickname");
+                User user = new User(id, firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
+                return user;
+            }else {
+                return null;
+            }
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }
         return null;
     }
     

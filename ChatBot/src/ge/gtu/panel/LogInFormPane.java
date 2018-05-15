@@ -32,6 +32,7 @@ public class LogInFormPane extends Application {
     
     @FXML
     private void initialize() {
+        
     }
 
     @Override

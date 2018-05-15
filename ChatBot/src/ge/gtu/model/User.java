@@ -49,7 +49,8 @@ public class User extends Bot{
         this.emotion = emotion;
     }
 
-    public User(String firstname, String surname, GenderEnum gender, Date birthday, String nickname, String password, String email) {
+    public User(int id, String firstname, String surname, GenderEnum gender, Date birthday, String nickname, String password, String email) {
+        this.id = id;
         this.firstname = firstname;
         this.surname = surname;
         this.gender = gender;
