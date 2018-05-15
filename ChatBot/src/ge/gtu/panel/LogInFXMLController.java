@@ -19,7 +19,8 @@ import javafx.scene.control.TextField;
  * @author alex
  */
 public class LogInFXMLController implements Initializable {
-
+     // @FXML-ია აქ საჭირო ყველგან სადაც იქმნება რაიმე იმისთვის რომ დიზაინმა კოდი დაინახოს 
+     @FXML
      
         TextField Id = new TextField();
         PasswordField password = new PasswordField();
