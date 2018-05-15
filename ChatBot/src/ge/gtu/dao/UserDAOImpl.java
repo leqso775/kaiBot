@@ -73,7 +73,7 @@ public class UserDAOImpl implements UserDAO{
                 Date birthday = rs.getDate("birthday");
                 String nickname = rs.getString("nickname");
                 String email = rs.getString("email");
-                User user = new User(firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
+                User user = new User(id, firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
                 return user;
             }else {
                 return null;
