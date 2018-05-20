@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/alex/NetBeansProjects/kaiBot/ChatBot/src/ge/gtu/panel/UserRegFXMLController.java</file>
+            <file>file:/home/alex/NetBeansProjects/kaiBot/ChatBot/src/ge/gtu/panel/UserRegistrationFormPane.java</file>
+            <file>file:/home/alex/NetBeansProjects/kaiBot/ChatBot/src/ge/gtu/panel/UserRegistrationForm.java</file>
+            <file>file:/home/alex/NetBeansProjects/kaiBot/ChatBot/src/ge/gtu/enums/EmotionEnum.java</file>
+            <file>file:/home/alex/NetBeansProjects/kaiBot/ChatBot/src/ge/gtu/runner/User.java</file>
+            <file>file:/home/alex/NetBeansProjects/kaiBot/ChatBot/src/ge/gtu/oop/RegCheck.java</file>
+            <file>file:/home/alex/NetBeansProjects/kaiBot/ChatBot/src/ge/gtu/runner/Main.java</file>
+        </group>
     </open-files>
 </project-private>
