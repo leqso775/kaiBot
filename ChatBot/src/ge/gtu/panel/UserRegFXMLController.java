@@ -6,7 +6,12 @@
 package ge.gtu.panel;
 
 
+import ge.gtu.Exceptions.IllegalEmailException;
+import ge.gtu.Exceptions.IllegalNameException;
+import ge.gtu.Exceptions.IllegalPasswordException1;
+import ge.gtu.Exceptions.IllegalSurnameException;
 import ge.gtu.enums.GenderEnum;
+import ge.gtu.oop.RegCheck;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -73,6 +78,48 @@ private   ComboBox gender ;
       gender.setStyle("-fx-font-family:sylfaen; -fx-font-size:15; -fx-alignment:CENTER;");
        gender.getItems().addAll(GenderEnum.MALE,GenderEnum.FEMALE,GenderEnum.OTHER);
         
+       firstnameTextField.textProperty().addListener((e,oldValue,newValue)->{
+           try{        
+               RegCheck.validName(newValue);
+            
+        }catch(IllegalNameException ex){
+            
+            errorFirstName.setText(ex.getMessage());
+        }
+        });
+       surnameTextField.textProperty().addListener((e,oldValue,newValue)->{
+           try{        
+               RegCheck.validSurname(newValue);
+            
+        }catch(IllegalSurnameException ex){
+            
+            errorSurname.setText(ex.getMessage());
+        }
+        });
+       email.textProperty().addListener((e,oldValue,newValue)->{
+           try{        
+               RegCheck.validEmail(newValue);
+            
+        }catch(IllegalEmailException ex){
+            
+            errorFirstName.setText(ex.getMessage());
+        }
+        });
+         RepPassword.textProperty().addListener((e,oldValue,newValue)->{
+           try{        
+               RegCheck.validPasswordRepeat(Pass, newValue);
+            
+        }catch(IllegalPasswordException1 ex){
+            
+            errorFirstName.setText(ex.getMessage());
+        }
+        });
+       
+       
+       
+       
+       
+       
           DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDate loc = LocalDate.now();
         System.out.println(format.format(loc));

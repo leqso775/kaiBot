@@ -5,6 +5,7 @@
  */
 package ge.gtu.oop;
 
+import ge.gtu.Exceptions.IllegalEmailException;
 import ge.gtu.Exceptions.IllegalNameException;
 import ge.gtu.Exceptions.IllegalPasswordException;
 import ge.gtu.Exceptions.IllegalPasswordException1;
@@ -40,11 +41,26 @@ public abstract class RegCheck {
         }else{
              throw new IllegalPasswordException1(" ✔");
         }
+  }
+             public static void validEmail(String email) throws IllegalEmailException{
+         String arr1[] = email.split("@");
+        if (arr1.length != 2){
+            throw new IllegalEmailException("შეუსაბამო მეილი!");
+        }
+        String s = arr1[1];
+        String arr2[] = s.split("\\.");
+        if (arr2.length < 2){
+            throw new IllegalEmailException("შეუსაბამო მეილი!");
+        }
+        for (int i=0; i<arr2.length; i++){
+            if (arr2[i].equals("")){
+                throw new IllegalEmailException("შეუსაბამო მეილი!");
+            }
+        }
         
         
-        
+        throw new IllegalEmailException(" ✔");
     }
-         
          
          
          
