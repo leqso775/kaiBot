@@ -18,13 +18,12 @@ import java.sql.SQLException;
  *
  * @author Nana_Lomidze
  */
-public class UserDAOImpl implements UserDAO{
+public abstract class UserDAOImpl implements UserDAO{
     
     private Connection conn;
     
     private PreparedStatement pstmt;
 
-    @Override
     public void addUser(User user) {
         try{
             String sql = "INSERT INTO system_user(id, firstname, surname, gender, birthday, password, email) VALUES (?,?,?,?,?,?,?)";

@@ -10,12 +10,16 @@ import ge.gtu.Exceptions.IllegalEmailException;
 import ge.gtu.Exceptions.IllegalNameException;
 import ge.gtu.Exceptions.IllegalPasswordException1;
 import ge.gtu.Exceptions.IllegalSurnameException;
+import ge.gtu.dao.UserDAO;
+import ge.gtu.dao.UserDAOImpl;
 import ge.gtu.enums.GenderEnum;
+import ge.gtu.model.User;
 import ge.gtu.oop.RegCheck;
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,33 +36,33 @@ import javafx.scene.control.TextField;
  */
 public class UserRegFXMLController implements Initializable {
 
- @FXML 
- private  TextField firstnameTextField ;
-  @FXML
-private   Label errorFirstName;
-   @FXML
- private  TextField surnameTextField ;
-   @FXML
-   private Label errorSurname;
-   @FXML
- private  TextField email;
-   @FXML
-   private Label errorEmail;
-   
-   
-      @FXML
-   private PasswordField Pass;
+    @FXML 
+    private  TextField firstnameTextField ;
     @FXML
-private   Label errorPass;
-      @FXML
-   private TextField RepPassword;
+    private   Label errorFirstName;
     @FXML
-private   Label errorRepPass;
+    private  TextField surnameTextField ;
+    @FXML
+    private Label errorSurname;
+    @FXML
+    private  TextField email;
+    @FXML
+    private Label errorEmail;
+   
+   //klichkas vutitebt amitom aq davwert
+   //Id rogorc pasportshia registraciashi vutitebt chven
+    @FXML
+    private PasswordField Pass;
+    @FXML
+    private   Label errorPass;
+    @FXML
+    private TextField RepPassword;
+    @FXML
+    private   Label errorRepPass;
     
     
-     @FXML
-private   ComboBox gender ;
- 
+    @FXML
+    private   ComboBox gender ;
     @FXML 
     private ComboBox year;
     @FXML
@@ -168,8 +172,13 @@ private   ComboBox gender ;
            String Password = Pass.getText();
            String Email = email.getText();
            GenderEnum Genum = (GenderEnum) gender.getValue();
-        ///dasaweria "Date date"  
-           
+          int y =  Integer.parseInt(year.toString());
+          int m = Integer.parseInt(month.toString());
+          int d = Integer.parseInt(day.toString());
+        Date date = new Date( y, m, d);
+        User newUser = new User(0, Name, Surname, Genum, date, null, Password, Email);
+        
+           UserDAO.addUser(newUser);
        }
        
     

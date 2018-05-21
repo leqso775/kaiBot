@@ -14,7 +14,7 @@ import ge.gtu.model.User;
  */
 public interface UserDAO {
     
-    void addUser (User user);
+   public static void addUser (User user){};
     
     void AddBot (Bot bot);
     
