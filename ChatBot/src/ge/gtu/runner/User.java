@@ -1,6 +1,6 @@
 package ge.gtu.runner;
 
-import ge.gtu.enums.EmotionEnum;
+import ge.gtu.model.enums.EmotionEnum;
 
 public class User {
 

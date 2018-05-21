@@ -16,6 +16,8 @@ public interface UserDAO {
     
    public static void addUser (User user){};
     
+    void editUser (User user);
+    
     void AddBot (Bot bot);
     
     User GetUser1 (int id, String password);
@@ -23,6 +25,5 @@ public interface UserDAO {
     User GetUser2 (String email, String password);
     
     String doPasswordRec(int id, String email);
-    
     
 }

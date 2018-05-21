@@ -5,8 +5,9 @@
  */
 package ge.gtu.dao;
 
-import ge.gtu.enums.GenderEnum;
+import ge.gtu.model.enums.GenderEnum;
 import ge.gtu.model.Bot;
+import ge.gtu.model.Checker;
 import ge.gtu.model.User;
 import java.sql.Connection;
 import java.sql.Date;
@@ -25,20 +26,31 @@ public abstract class UserDAOImpl implements UserDAO{
     private PreparedStatement pstmt;
 
     public void addUser(User user) {
-        try{
-            String sql = "INSERT INTO system_user(id, firstname, surname, gender, birthday, password, email) VALUES (?,?,?,?,?,?,?)";
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, user.getId());
-            pstmt.setString(2, user.getFirstname());
-            pstmt.setString(3, user.getSurname());
-            pstmt.setCursorName(GenderEnum.values().toString());
-            pstmt.setDate(5, user.getBirthday());
-            pstmt.setString(6, user.getPassword());
-            pstmt.setString(7, user.getEmail());
-        }catch(SQLException ex){
-            System.out.println(ex.getMessage());
+        
+     //   if(user.getFirstname()!=null && user.getSurname()!=null && user.getGender()!=null && user.getBirthday()!=null
+     //           && user.getPassword().length()>=8 && user.getPassword().length()<=16 && user.getEmail()!=null ){
+            try{
+                String sql = "INSERT INTO system_user(id, firstname, surname, gender, birthday, password, email) VALUES (?,?,?,?,?,?,?)";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, user.getId());
+                if(user.getFirstname()!=null){
+                    pstmt.setString(2, user.getFirstname());
+                }if(user.getSurname()!=null){
+                    pstmt.setString(3, user.getSurname());
+                }if(user.getGender()!= null){
+                    pstmt.setCursorName(GenderEnum.values().toString());
+                }if(user.getBirthday()!=null){
+                    pstmt.setDate(5, user.getBirthday());
+                }if(user.getPassword().length()>8 && user.getPassword().length()<20){
+                    pstmt.setString(6, user.getPassword());
+                }if(user.getEmail()!=null){
+                    pstmt.setString(7, user.getEmail());
+                }
+            }catch(SQLException ex){
+                System.out.println(ex.getMessage());
+            }
         }
-    }
+    //}
 
     @Override
     public void AddBot(Bot bot) {
@@ -102,4 +114,8 @@ public abstract class UserDAOImpl implements UserDAO{
         return null;
     }
     
+    
+    @Override
+    public void editUser(User user) {
+    }
 }
