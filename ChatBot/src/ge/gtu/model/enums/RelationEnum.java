@@ -10,6 +10,8 @@ package ge.gtu.model.enums;
  * @author Nana_Lomidze
  */
 public enum RelationEnum {
+    UNKNOWN,
+    KNOWN,
     PARENT, 
     SILBLING, 
     SPOUSE, 

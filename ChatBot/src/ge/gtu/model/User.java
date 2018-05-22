@@ -8,13 +8,13 @@ package ge.gtu.model;
 import ge.gtu.model.enums.EmotionEnum;
 import java.sql.Date;
 import ge.gtu.model.enums.GenderEnum;
-import ge.gtu.model.enums.RelationEnum;
+import java.util.ArrayList;
 
 /**
  *
  * @author Archil
  */
-public class User extends Bot{
+public class User{
     
     //Сделать бота вообще нехависимым и сделать так чтобы вы узнали друг друга по мере общения
     //Если нет Юзера родных, научить бота их распознавать и сказать ему об их
@@ -24,30 +24,26 @@ public class User extends Bot{
     private GenderEnum gender;
     private Date birthday;
     private String nickname;
-    private String specialnickname;
-    private String lovelyname;
-    private String lovelynickname;
     private String password;
     private String email;
-    private EmotionEnum emotion;
+    private ArrayList<EmotionEnum> emotion;
 
     public User() {
     }
 
-    public User(int id, String firstname, String surname, GenderEnum gender, Date birthday, String nickname, String specialnickname, String lovelyname, String lovelynickname, String password, String email, EmotionEnum emotion) {
+    public User(int id, String firstname, String surname, GenderEnum gender, Date birthday, String nickname, String password, String email, ArrayList emotion) {
         this.id = id;
         this.firstname = firstname;
         this.surname = surname;
         this.gender = gender;
         this.birthday = birthday;
         this.nickname = nickname;
-        this.specialnickname = specialnickname;
-        this.lovelyname = lovelyname;
-        this.lovelynickname = lovelynickname;
         this.password = password;
         this.email = email;
         this.emotion = emotion;
     }
+
+    
 
     public User(int id, String firstname, String surname, GenderEnum gender, Date birthday, String nickname, String password, String email) {
         this.id = id;
@@ -59,7 +55,7 @@ public class User extends Bot{
         this.password = password;
         this.email = email;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -108,30 +104,6 @@ public class User extends Bot{
         this.nickname = nickname;
     }
 
-    public String getSpecialnickname() {
-        return specialnickname;
-    }
-
-    public void setSpecialnickname(String specialnickname) {
-        this.specialnickname = specialnickname;
-    }
-
-    public String getLovelyname() {
-        return lovelyname;
-    }
-
-    public void setLovelyname(String lovelyname) {
-        this.lovelyname = lovelyname;
-    }
-
-    public String getLovelynickname() {
-        return lovelynickname;
-    }
-
-    public void setLovelynickname(String lovelynickname) {
-        this.lovelynickname = lovelynickname;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -148,13 +120,19 @@ public class User extends Bot{
         this.email = email;
     }
 
-    public EmotionEnum getEmotion() {
+    public ArrayList getEmotion() {
         return emotion;
     }
 
-    public void setEmotion(EmotionEnum emotion) {
+    public void setEmotion(ArrayList emotion) {
         this.emotion = emotion;
     }
+    
+    
+
+    
+
+    
     
     
 
