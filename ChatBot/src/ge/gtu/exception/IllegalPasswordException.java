@@ -3,28 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ge.gtu.Exceptions;
+package ge.gtu.exception;
 
 /**
  *
  * @author Alex
  */
-public class IllegalNameException extends Exception {
+public class IllegalPasswordException extends Exception {
 
     /**
-     * Creates a new instance of <code>IllegalNameException</code> without
+     * Creates a new instance of <code>IllegalPasswordException</code> without
      * detail message.
      */
-    public IllegalNameException() {
+    public IllegalPasswordException() {
     }
 
     /**
-     * Constructs an instance of <code>IllegalNameException</code> with the
+     * Constructs an instance of <code>IllegalPasswordException</code> with the
      * specified detail message.
      *
      * @param msg the detail message.
      */
-    public IllegalNameException(String msg) {
+    public IllegalPasswordException(String msg) {
         super(msg);
     }
 }

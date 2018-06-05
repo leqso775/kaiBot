@@ -14,6 +14,9 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -21,9 +24,9 @@ import java.sql.SQLException;
  */
 public abstract class UserDAOImpl implements UserDAO{
     
-    private Connection conn;
+    private static Connection conn;
     
-    private PreparedStatement pstmt;
+    private static PreparedStatement pstmt;
 
     public void addUser(User user) {
         
@@ -51,18 +54,20 @@ public abstract class UserDAOImpl implements UserDAO{
             }
         }
     //}
+    
+  
 
     @Override
     public void AddBot(Bot bot) {
         //Bot bot = new Bot();
     }
 
-    @Override
-    public User GetUser1(int id, String password) {
+    public static User GetUser1(String id, String password) {
         try{
             String sql = "SELECT * FROM system_user WHERE id = ? AND password = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
+            int i = Integer.parseInt(id);
+            pstmt.setInt(1, i);
             pstmt.setString(2, password);
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
@@ -72,7 +77,7 @@ public abstract class UserDAOImpl implements UserDAO{
                 Date birthday = rs.getDate("birthday");
                 String nickname = rs.getString("nickname");
                 String email = rs.getString("email");
-                User user = new User(id, firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
+                User user = new User(i, firstname, surname, GenderEnum.OTHER, birthday, nickname, password, email);
                 return user;
             }else {
                 return null;
@@ -115,7 +120,14 @@ public abstract class UserDAOImpl implements UserDAO{
     }
     
     
-    @Override
-    public void editUser(User user) {
+      public User editUser(String id1 ,String password1 ,TextField id, TextField firstname, TextField surname, ComboBox gender, 
+           Date birthday, TextField nickname, PasswordField password, TextField email){
+        User user = UserDAOImpl.GetUser1(id1, password1);
+        
+        return null;
+          
+
     }
+    
+    
 }

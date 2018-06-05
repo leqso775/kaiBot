@@ -5,11 +5,11 @@
  */
 package ge.gtu.oop;
 
-import ge.gtu.Exceptions.IllegalEmailException;
-import ge.gtu.Exceptions.IllegalNameException;
-import ge.gtu.Exceptions.IllegalPasswordException;
-import ge.gtu.Exceptions.IllegalPasswordException1;
-import ge.gtu.Exceptions.IllegalSurnameException;
+import ge.gtu.exception.IllegalEmailException;
+import ge.gtu.exception.IllegalNameException;
+import ge.gtu.exception.IllegalPasswordException;
+import ge.gtu.exception.IllegalPasswordException1;
+import ge.gtu.exception.IllegalSurnameException;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 

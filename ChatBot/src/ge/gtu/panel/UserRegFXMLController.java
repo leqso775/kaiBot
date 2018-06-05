@@ -6,10 +6,10 @@
 package ge.gtu.panel;
 
 
-import ge.gtu.Exceptions.IllegalEmailException;
-import ge.gtu.Exceptions.IllegalNameException;
-import ge.gtu.Exceptions.IllegalPasswordException1;
-import ge.gtu.Exceptions.IllegalSurnameException;
+import ge.gtu.exception.IllegalEmailException;
+import ge.gtu.exception.IllegalNameException;
+import ge.gtu.exception.IllegalPasswordException1;
+import ge.gtu.exception.IllegalSurnameException;
 import ge.gtu.dao.UserDAO;
 import ge.gtu.model.User;
 import ge.gtu.model.enums.GenderEnum;
